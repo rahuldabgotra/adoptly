@@ -31,7 +31,6 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         console.error('Error:', error);
     }
 
-
     //     if (response.ok) {
     //         sessionStorage.setItem('loggedIn', 'true');
     //         window.location.href = 'index.html';
