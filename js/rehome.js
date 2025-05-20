@@ -4,15 +4,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const otherPetTypeInput = document.getElementById('other-pet-type-input');
     const messageBox = document.getElementById('submission-message');
 
-    // Set uploader info if user is logged in
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (!currentUser) {
+    // Check if user is logged in via localStorage (using 'loggedInUser')
+    const username = localStorage.getItem('loggedInUser');
+
+    if (!username) {
         alert('You must be logged in to list a pet for adoption.');
-        window.location.href = './login.html';
+        window.location.href = './index.html';
         return;
     }
 
-    // Handle 'Other' pet type
+    // Get user data from localStorage (placeholder email used)
+    const currentUser = {
+        name: username,
+        email: `${username}@example.com`
+    };
+
+    // Show/hide "Other" type input field
     petTypeSelect.addEventListener('change', function () {
         if (this.value === 'other') {
             otherPetTypeDiv.style.display = 'block';
@@ -23,33 +30,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Form submission handler
+    // Handle form submission
     const form = document.getElementById('pet-submission-form');
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        // Prepare form data
         const formData = new FormData(form);
 
-        // Append uploader info from localStorage
+        // Append uploader info
         formData.append('uploaderName', currentUser.name);
         formData.append('uploaderEmail', currentUser.email);
-
 
         try {
             const response = await fetch('http://localhost:3000/rehome', {
                 method: 'POST',
-                body: formData // Send the form data (including image)
+                body: formData
             });
 
             const result = await response.json();
 
             if (response.ok) {
-                messageBox.textContent = result.message;
+                messageBox.textContent = result.message || 'Pet listed successfully.';
                 messageBox.style.color = 'green';
                 form.reset();
+                otherPetTypeDiv.style.display = 'none'; // Reset "Other" field visibility
             } else {
-                messageBox.textContent = 'Error: ' + result.message;
+                messageBox.textContent = 'Error: ' + (result.message || 'Unknown error');
                 messageBox.style.color = 'red';
             }
         } catch (err) {

@@ -32,12 +32,25 @@
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./adopt.html">Adopt</a></li>
                     <li><a href="./rehome.html">Rehome</a></li>
-                    <li><a href="./login.html" id="logoutLink">Logout</a></li>
+                    <li id="authNav"><a href="#" id="authButton">Login</a></li>
                     <li><button id="theme-toggle">🌙</button></li>
                 </ul>
             </div>
         </nav>
     </header>
+
+    <!-- Login/Register Modal -->
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="authTitle">Login</h2>
+            <input type="text" id="authUsername" placeholder="Username" required />
+            <input type="password" id="authPassword" placeholder="Password" required />
+            <button id="authSubmit">Submit</button>
+            <p id="toggleAuth">Don't have an account? <a href="#" id="switchMode">Sign up</a></p>
+        </div>
+    </div>
+
 
     <main>
         <section class="hero">
@@ -101,6 +114,7 @@
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./adopt.html">Adopt a Pet</a></li>
                         <li><a href="./rehome.html">Rehome</a></li>
+                        <li><a href="./faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

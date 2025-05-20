@@ -15,29 +15,23 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
         const data = await response.json();
 
-        if (response.ok) {
-            localStorage.setItem('currentUser', JSON.stringify({
+        if (response.ok && data.name && data.email) {
+            // Store user in localStorage
+            const currentUser = {
                 name: data.name,
                 email: data.email,
-                userId: data.userId
-            }));
+                userId: data.userId || null
+            };
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
             sessionStorage.setItem('loggedIn', 'true');
 
+            // Redirect to homepage
             window.location.href = 'index.html';
         } else {
-            alert(data.message);
+            alert(data.message || 'Login failed');
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error during login:', error);
+        alert('Login request failed.');
     }
-
-    //     if (response.ok) {
-    //         sessionStorage.setItem('loggedIn', 'true');
-    //         window.location.href = 'index.html';
-    //     } else {
-    //         alert(data.message);
-    //     }
-    // } catch (error) {
-    //     console.error('Error:', error);
-    // }
 });
