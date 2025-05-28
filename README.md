@@ -8,16 +8,16 @@ Visit the live application at: [rahuldabgotra.github.io/adoptly](https://rahulda
 
 ## 📁 Pages
 
-- **Home (`index.html`)** — Introduction to Adoptly and featured pets.
-- **About (`about.html`)** — Information about the platform's mission and team.
-- **Adopt (`adopt.html`)** — Listings of pets available for adoption.
-- **Rehome (`rehome.html`)** — Form for users to submit pets for rehoming.
-- **Pet Info (`pet-info.html`)** — Detailed information about individual pets.
-- **FAQ (`faq.html`)** — Answers to common questions about adoption and rehoming.
-- **Contact (`contact.html`)** — Contact form and support information.
-- **Privacy Policy (`privacy-policy.html`)** — Details on data handling and user privacy.
-- **Terms of Service (`terms-of-service.html`)** — Legal terms governing the use of the platform.
-
+- 🔗 [Home](https://rahuldabgotra.github.io/adoptly/index.html) — Introduction to Adoptly and featured pets.  
+- 🔗 [About](https://rahuldabgotra.github.io/adoptly/about.html) — Platform mission and team information.  
+- 🔗 [Adopt](https://rahuldabgotra.github.io/adoptly/adopt.html) — Listings of pets available for adoption.  
+- 🔗 [Rehome](https://rahuldabgotra.github.io/adoptly/rehome.html) — Form for users to submit pets for rehoming.  
+- 🔗 [Pet Info](https://rahuldabgotra.github.io/adoptly/pet-info.html) — Detailed information about individual pets.  
+- 🔗 [FAQ](https://rahuldabgotra.github.io/adoptly/faq.html) — Answers to common questions about adoption and rehoming.  
+- 🔗 [Contact](https://rahuldabgotra.github.io/adoptly/contact.html) — Contact form and support information.  
+- 🔗 [Privacy Policy](https://rahuldabgotra.github.io/adoptly/privacy-policy.html) — Data handling and user privacy details.  
+- 🔗 [Terms of Service](https://rahuldabgotra.github.io/adoptly/terms-of-service.html) — Legal terms governing platform use.  
+.
 ## 🛠️ Tech Stack
 
 - **HTML** — Structure of the site  
